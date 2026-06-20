@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Clock } from "lucide-react";
+import Link from "next/link";
 
 interface CompanionCardProps {
   id: string;
@@ -8,6 +9,7 @@ interface CompanionCardProps {
   subject: string;
   duration: number;
   color: string;
+  slug: string;
 }
 
 const CompanionCard = ({
@@ -17,6 +19,7 @@ const CompanionCard = ({
   subject,
   duration,
   color,
+  slug,
 }: CompanionCardProps) => {
   return (
     <article className="companion-card" style={{ backgroundColor: color }}>
@@ -28,7 +31,7 @@ const CompanionCard = ({
             <p className="text-sm font-medium opacity-80">{topic}</p>
           </div>
         </div>
-        <button className="companion-bookmark shrink-0 transition-transform hover:scale-105 active:scale-95">
+        <button className="companion-bookmark  transition-transform hover:scale-105 active:scale-95">
           <Image
             src="/icons/bookmark.svg"
             alt="Bookmark"
@@ -37,14 +40,16 @@ const CompanionCard = ({
           />
         </button>
       </div>
-      <div className="mt-6 flex items-center justify-between">
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 text-black text-xs font-semibold backdrop-blur-sm border border-black/10">
-          <Clock className="w-3.5 h-3.5" />
+      <div className="mt-6 flex flex-col gap-4">
+        <div className="flex items-center gap-1.5 text-black text-xs font-semibold">
+          <Clock className="w-4 h-4" />
           <span>{duration} mins</span>
         </div>
-        <button className="px-4 py-2 border border-black rounded-full text-sm font-bold bg-white/40 hover:bg-white text-black transition-colors backdrop-blur-sm cursor-pointer">
-          Chat Now
-        </button>
+        <Link href={`/companions/${slug}`} className="w-full">
+          <button className="btn-primary w-full justify-center">
+            Launch Lesson
+          </button>
+        </Link>
       </div>
     </article>
   );

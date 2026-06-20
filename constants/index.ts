@@ -24,6 +24,7 @@ export const voices = {
 export const recentSessions = [
   {
     id: "1",
+    slug: "neura-the-brainy-explorer",
     subject: "science",
     name: "Neura the Brainy Explorer",
     topic: "Neural Network of the Brain",
@@ -32,6 +33,7 @@ export const recentSessions = [
   },
   {
     id: "2",
+    slug: "countsy-the-number-wizard",
     subject: "maths",
     name: "Countsy the Number Wizard",
     topic: "Derivatives & Integrals",
@@ -40,6 +42,7 @@ export const recentSessions = [
   },
   {
     id: "3",
+    slug: "verba-the-vocabulary-builder",
     subject: "language",
     name: "Verba the Vocabulary Builder",
     topic: "English Literature",
@@ -48,6 +51,7 @@ export const recentSessions = [
   },
   {
     id: "4",
+    slug: "codey-the-logic-hacker",
     subject: "coding",
     name: "Codey the Logic Hacker",
     topic: "Intro to If-Else Statements",
@@ -57,6 +61,7 @@ export const recentSessions = [
   {
     id: "5",
     subject: "history",
+    slug: "memo-the-memory-keeper",
     name: "Memo, the Memory Keeper",
     topic: "World Wars: Causes & Consequences",
     duration: 15,
@@ -64,6 +69,7 @@ export const recentSessions = [
   },
   {
     id: "6",
+    slug: "maestro-the-market-expert",
     subject: "economics",
     name: "The Market Maestro",
     topic: "The Basics of Supply & Demand",

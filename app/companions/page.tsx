@@ -1,46 +1,61 @@
 import React from 'react'
-import CompanionList, { CompanionData } from '@/components/CompanionList'
+import CompanionCard from '@/components/CompanionCard'
 
-const dummyCompanions: CompanionData[] = [
+const dummyCompanions = [
   {
+    $id: "1",
     id: "1",
+    slug: "albert-einstein",
     name: "Albert Einstein",
     topic: "Theory of Relativity",
-    subject: "Physics",
+    subject: "Science" as any, // bypassing enum check for dummy
     duration: 45,
     color: "#E2F0CB",
+    bookmarked: false,
   },
   {
+    $id: "2",
     id: "2",
+    slug: "marie-curie",
     name: "Marie Curie",
     topic: "Radioactivity",
-    subject: "Chemistry",
+    subject: "Chemistry" as any,
     duration: 30,
     color: "#FFDFD3",
+    bookmarked: false,
   },
   {
+    $id: "3",
     id: "3",
+    slug: "isaac-newton",
     name: "Isaac Newton",
     topic: "Laws of Motion",
-    subject: "Physics",
+    subject: "Physics" as any,
     duration: 60,
     color: "#C1E1C1",
+    bookmarked: false,
   },
   {
+    $id: "4",
     id: "4",
+    slug: "ada-lovelace",
     name: "Ada Lovelace",
     topic: "Computer Programming",
-    subject: "Computer Science",
+    subject: "Computer Science" as any,
     duration: 40,
     color: "#F1CBFF",
+    bookmarked: false,
   },
   {
+    $id: "5",
     id: "5",
+    slug: "charles-darwin",
     name: "Charles Darwin",
     topic: "Evolutionary Biology",
-    subject: "Biology",
+    subject: "Biology" as any,
     duration: 50,
     color: "#FFCBA4",
+    bookmarked: false,
   },
 ];
 
@@ -51,7 +66,11 @@ const page = () => {
         <h1 className="text-4xl font-extrabold tracking-tight">Your AI Companions</h1>
         <p className="text-black/60 font-medium">Chat with historical figures and top experts across different subjects.</p>
       </div>
-      <CompanionList companions={dummyCompanions} />
+      <div className="companions-grid gap-6">
+        {dummyCompanions.map((companion) => (
+          <CompanionCard key={companion.id} {...companion} />
+        ))}
+      </div>
     </div>
   )
 }
